@@ -121,29 +121,67 @@ void CleanUpTree( Node*& BST)
     CleanUpTree( BST->right );
     delete BST->right;
 }
+void swap(int& a, int &b)
+{
+    int sum = a + b;
+    a = sum - a;
+    b = sum - b;
+}
+
+int Partition(int* _array, int start, int end)
+{
+    int pivot = end;
+    int i = start - 1;
+    int j = start;
+    while (j < pivot - 1)
+    {
+        while (_array[j] > _array[pivot])
+        {
+            // till you find a value greater than the pivot element 
+            // increment.
+            ++j;
+        }
+        // else you found a value less than the pivot element and so swap with the first element in the array.
+        ++i;
+        swap(_array[i], _array[j]);
+    }
+    swap( _array[i+1], _array[pivot]);
+    return i+1;
+}
+void quick_sort(int *_array, int start, int end)
+{
+    if (start < end)
+    {
+        int partition = Partition( _array, start, end);
+        quick_sort( _array, start, partition);
+        quick_sort( _array, partition +1, end);
+    }
+}
+
 
 vector<int> TreeValues{6,4,5,2,1,3,18,15,16,27};
 int main()
 {
-    Node* bst_tree = 0;
-    vector<int>::iterator itrBegin = TreeValues.begin();
-    vector<int>::iterator itrEnd = TreeValues.end();
-    while( itrBegin != itrEnd )
-    {
-        Insert_BST_2(bst_tree, *itrBegin);
-        ++itrBegin;
-    }
-    Node* node1 = Search(bst_tree, 1);
-    Node* node2 = Search(bst_tree, 3);
+    quick_sort( &TreeValues[0], 0, TreeValues.size());
+   // Node* bst_tree = 0;
+   // vector<int>::iterator itrBegin = TreeValues.begin();
+   // vector<int>::iterator itrEnd = TreeValues.end();
+   // while( itrBegin != itrEnd )
+   // {
+   //     Insert_BST_2(bst_tree, *itrBegin);
+   //     ++itrBegin;
+   // }
+   // Node* node1 = Search(bst_tree, 1);
+   // Node* node2 = Search(bst_tree, 3);
 
-    Node* nodeParent = SearchCommonFather( bst_tree, node1->value, node2->value);
-    int path_length = HeigthDifferenceOfNode(bst_tree, node1->value, node2->value) - 2* Search_height( bst_tree, nodeParent->value );
+   // Node* nodeParent = SearchCommonFather( bst_tree, node1->value, node2->value);
+   // int path_length = HeigthDifferenceOfNode(bst_tree, node1->value, node2->value) - 2* Search_height( bst_tree, nodeParent->value );
 
-   cout << "Height Differnece between nodes:" << path_length <<endl;
+   //cout << "Height Differnece between nodes:" << path_length <<endl;
 
-   CleanUpTree( bst_tree );
-   delete bst_tree;
-   TreeValues.clear();
+   //CleanUpTree( bst_tree );
+   //delete bst_tree;
+   //TreeValues.clear();
     getchar();
     return 0;
 }
