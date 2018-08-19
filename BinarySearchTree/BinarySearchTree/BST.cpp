@@ -122,28 +122,29 @@ void CleanUpTree( Node*& BST)
     delete BST->right;
 }
 
-vector<int> TreeValues{6,4,5,2,1,3,18,15,16,27};
-int main()
-{
-    Node* bst_tree = 0;
-    vector<int>::iterator itrBegin = TreeValues.begin();
-    vector<int>::iterator itrEnd = TreeValues.end();
-    while( itrBegin != itrEnd )
-    {
-        Insert_BST_2(bst_tree, *itrBegin);
-        ++itrBegin;
-    }
-    Node* node1 = Search(bst_tree, 1);
-    Node* node2 = Search(bst_tree, 3);
-
-    Node* nodeParent = SearchCommonFather( bst_tree, node1->value, node2->value);
-    int path_length = HeigthDifferenceOfNode(bst_tree, node1->value, node2->value) - 2* Search_height( bst_tree, nodeParent->value );
-
-   cout << "Height Differnece between nodes:" << path_length <<endl;
-
-   CleanUpTree( bst_tree );
-   delete bst_tree;
-   TreeValues.clear();
-    getchar();
-    return 0;
-}
+//vector<int> TreeValues{6,4,5,2,1,3,18,15,16,27};
+//vector<int> TreeValues2{ 11,5,3,4,2,1,6,7,15,14,12,17 };
+//int main()
+//{
+//    Node* bst_tree = 0;
+//    vector<int>::iterator itrBegin = TreeValues2.begin();
+//    vector<int>::iterator itrEnd = TreeValues2.end();
+//    while( itrBegin != itrEnd )
+//    {
+//        Insert_BST_2(bst_tree, *itrBegin);
+//        ++itrBegin;
+//    }
+//    Node* node1 = Search(bst_tree, 1);
+//    Node* node2 = Search(bst_tree, 4);
+//
+//    Node* nodeParent = SearchCommonFather( bst_tree, node1->value, node2->value);
+//    int path_length = HeigthDifferenceOfNode(bst_tree, node1->value, node2->value) - 2* Search_height( bst_tree, nodeParent->value );
+//
+//   cout << "Height Differnece between nodes:" << path_length <<endl;
+//
+//   CleanUpTree( bst_tree );
+//   delete bst_tree;
+//   TreeValues.clear();
+//    getchar();
+//    return 0;
+//}
