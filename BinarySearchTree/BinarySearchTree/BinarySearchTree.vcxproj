@@ -150,6 +150,8 @@
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="LCM_HCF.cpp" />
+    <ClCompile Include="LinkedListReversal.cpp" />
+    <ClCompile Include="MergeSort.cpp" />
     <ClCompile Include="quick_sort.cpp" />
     <ClCompile Include="StringLevelChecking.cpp" />
   </ItemGroup>

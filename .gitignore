@@ -40,3 +40,4 @@
 *.ilk
 *.db
 BinarySearchTree/.vs/BinarySearchTree/v14/.suo
+*.opendb

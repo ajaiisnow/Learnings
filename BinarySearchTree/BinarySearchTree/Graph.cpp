@@ -111,28 +111,28 @@ private:
 };
 
 
-int main(int argc, char* argv[])
-{
-    /*Graph_Matrix myGraph(4);
-    myGraph.AddEdges(0, 2);
-    myGraph.AddEdges(0, 1);
-    myGraph.AddEdges(2, 0);
-    myGraph.AddEdges(1, 3);
-    myGraph.AddEdges(1, 2);
-    myGraph.AddEdges(3, 2);*/
-
-    Graph_Matrix myGraph(6);
-    myGraph.AddEdges(0, 1);
-    myGraph.AddEdges(0, 2);
-    myGraph.AddEdges(1, 3);
-    myGraph.AddEdges(1, 4);
-    myGraph.AddEdges(3, 5);
-    myGraph.AddEdges(5, 4);
-    myGraph.AddEdges(2, 3);
-
-    myGraph.DisplayGraph();
-    //BFS
-    myGraph.BFS(0);
-
-    return 0;
-}
+//int main(int argc, char* argv[])
+//{
+//    /*Graph_Matrix myGraph(4);
+//    myGraph.AddEdges(0, 2);
+//    myGraph.AddEdges(0, 1);
+//    myGraph.AddEdges(2, 0);
+//    myGraph.AddEdges(1, 3);
+//    myGraph.AddEdges(1, 2);
+//    myGraph.AddEdges(3, 2);*/
+//
+//    Graph_Matrix myGraph(6);
+//    myGraph.AddEdges(0, 1);
+//    myGraph.AddEdges(0, 2);
+//    myGraph.AddEdges(1, 3);
+//    myGraph.AddEdges(1, 4);
+//    myGraph.AddEdges(3, 5);
+//    myGraph.AddEdges(5, 4);
+//    myGraph.AddEdges(2, 3);
+//
+//    myGraph.DisplayGraph();
+//    //BFS
+//    myGraph.BFS(0);
+//
+//    return 0;
+//}
